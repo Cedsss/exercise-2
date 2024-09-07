@@ -1,0 +1,137 @@
+/* CSS Variables for Themes */
+:root {
+    --background-color: #fff;
+    --text-color: #000;
+    --header-background: #f0f0f0;
+    --nav-link-color: #333;
+    --footer-background: #f0f0f0;
+}
+
+[data-theme="dark"] {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --header-background: #1e1e1e;
+    --nav-link-color: #e0e0e0;
+    --footer-background: #1e1e1e;
+}
+
+[data-theme="custom"] {
+    --background-color: #004d40;
+    --text-color: #fff;
+    --header-background: #00796b;
+    --nav-link-color: #b2dfdb;
+    --footer-background: #00796b;
+}
+
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.5s, color 0.5s;
+    margin: 0; /* Remove default margin */
+}
+
+header {
+    background-color: var(--header-background);
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center the navigation links */
+    flex-wrap: wrap; /* Allow the items to wrap on smaller screens */
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--nav-link-color);
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+/* Footer */
+footer {
+    background-color: var(--footer-background);
+    padding: 10px;
+    text-align: center;
+    position: relative; /* Remove fixed position */
+    width: 100%;
+}
+
+/* Animations */
+h1 {
+    animation: fadeIn 2s ease-in-out;
+    text-align: center;
+}
+
+p {
+    animation: slideIn 1s ease-in-out;
+    font-size: large;
+    text-align: center; /* Center align text */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav li {
+        margin: 5px 0;
+    }
+
+    main {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem; /* Reduce heading size on small screens */
+    }
+    
+    p {
+        font-size: 1rem; /* Adjust paragraph font size */
+    }
+
+    nav li {
+        margin: 8px 0;
+    }
+
+    footer {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+}
